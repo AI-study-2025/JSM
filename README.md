@@ -8,3 +8,7 @@
 ## Co-DETR: [https://arxiv.org/abs/2211.12860](https://arxiv.org/abs/2211.12860)  <br>
 간단 정리 : DETR에서 양성 쿼리의 수가 적어 효율적인 학습을 할수 없음을 지적하며, 보조 헤드를 통해 인위적으로 양성 쿼리를 만듦으로써 보다 효율적으로 학습하는 방법을 제안하였습니다. <br>
 [BLOG](https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0-Co-DETR-DETR-with-Collaborative-Hybrid-Assignments-Training)
+
+## Swin-Transformer: [https://arxiv.org/abs/2103.14030](https://arxiv.org/abs/2103.14030) <br>
+간단 정리 : 기존의 ViT에서는 고정된 크기의 이미지, 해상도에 따른 연산량 2차식 증가 문제 제기, 계층적 구조, window와 shifted window 기반의 self-multi-head attention 제안으로 vision task의 백본을 제안  <br>
+[BLOG](https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-Swin-Transformer-Hierarchical-Vision-Transformer-using-Shifted-Windows)
