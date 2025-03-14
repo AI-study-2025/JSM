@@ -12,3 +12,8 @@
 ## Swin-Transformer: [https://arxiv.org/abs/2103.14030](https://arxiv.org/abs/2103.14030) <br>
 간단 정리 : 기존의 ViT에서는 고정된 크기의 이미지, 해상도에 따른 연산량 2차식 증가 문제 제기, 계층적 구조, window와 shifted window 기반의 self-multi-head attention 제안으로 vision task의 백본을 제안  <br>
 [BLOG](https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-Swin-Transformer-Hierarchical-Vision-Transformer-using-Shifted-Windows)
+
+
+## Swin-Transformer: [https://arxiv.org/abs/2304.02643](https://arxiv.org/abs/2304.02643) <br>
+간단 정리 : segmentation 분야에서 Foundation 모델을 제안하였습니다. Promptable 모델을 활용, 데이터를 얻기 위한 data engine 등을 활용하여 어떠한 Prompt에 대해서도 segment를 진행하는 모델과 데이터를 제안하였습니다.  <br>
+[BLOG](https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-SA-segment-Anythings)
