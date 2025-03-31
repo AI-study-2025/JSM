@@ -22,3 +22,16 @@
 ## End-to-End-Learning-for-self-driving-cars : [https://arxiv.org/abs/1604.07316](https://arxiv.org/abs/1604.07316) <br>
 간단 정리 : 2D 이미지 입력과 운전대의 각도 데이터만을 활용하여 CNN 아키텍처를 활용한 End-to-End 자율주행이 가능함을 입증하였습니다. <br>
 [BLOG](https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-End-to-End-Learning-for-Self-Driving-cars)
+
+# Multi Modal Learnign
+
+## Show and Tell: A Neural Image Caption Generator : [https://arxiv.org/abs/1411.4555](https://arxiv.org/abs/1411.4555) <br>
+간단 정리 : RNN과 CNN을 결합하여 Image caption task에서 SOTA 모달을 달성하며 서로 다른 모달리티 결합의 가능성을 보여주었습니다. <br>
+[BLOG](https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-Show-and-Tell-A-Neural-Image-Caption-Generator)
+
+
+## Show, Attend and Tell : Neural Image caption Generation with Visual Attention : [https://arxiv.org/abs/1502.03044](https://arxiv.org/abs/1502.03044) <br>
+간단 정리 : 단어 예측시 이미지의 특정 부분에 집중할 수 있도록 attention 매커니즘을 제안하였습니다. 이에 모델이 단어를 예측할때 이미지의 어딜 보고 예측하는지에 대한 인사이트를 제공하였습니다.  <br>
+[BLOG](https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-Show-Attend-and-Tell-Neural-Image-caption-Generation-with-Visual-Attention)
+
+
