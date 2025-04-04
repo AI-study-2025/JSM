@@ -36,7 +36,7 @@
 
 
 ## ViLBERT: Pretraining Task-Agnostic Visiolinguistic Representations for Vision-and-Language Tasks : [https://arxiv.org/abs/1908.02265](https://arxiv.org/abs/1908.02265) <br>
-간단 정리 : 2-stream & co-attention 아키텍처를 활용하여 각 모달리티에 최적화된 특징 추출 후 각 모달리티가 서로 참조하는 구조를 통해서 자연어-이미지의 joint represnetation 사전학습 모델을 제안합니다.
+간단 정리 : 2-stream & co-attention 아키텍처를 활용하여 각 모달리티에 최적화된 특징 추출 후 각 모달리티가 서로 참조하는 구조를 통해서 자연어-이미지의 joint represnetation 사전학습 모델을 제안합니다. <br>
 [BLOG](https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-ViLBERT-Pretraining-Task-Agnostic-Visiolinguistic-Representations)
 
 
