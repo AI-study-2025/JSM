@@ -48,3 +48,14 @@
 
 
 
+
+# Human Pose estimation
+
+## DeepPose: Human Pose Estimation via Deep Neural Networks
+[https://arxiv.org/abs/1312.4659](https://arxiv.org/abs/1312.4659) <br>
+간단 정리 : 간단한 CNN 모델을 사용하여 사람의 관절 좌표를 예측하는데 높은 성능을 보임을 제안하였습니다. 추가로 Cascade 구조를 통해서 각 좌표를 보정하여 정확도를 향상시켰습니다. <br>
+[BLOG](https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-DeepPose-Human-Pose-Estimation-Via-Deep-Neural-Networks)
+
+
+
+
