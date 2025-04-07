@@ -40,8 +40,7 @@
 [BLOG](https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-ViLBERT-Pretraining-Task-Agnostic-Visiolinguistic-Representations)
 
 
-## Image Segmentation Using Text and Image Prompts
-[https://arxiv.org/abs/2112.10003](https://arxiv.org/abs/2112.10003) <br>
+## Image Segmentation Using Text and Image Prompts : [https://arxiv.org/abs/2112.10003](https://arxiv.org/abs/2112.10003) <br>
 간단 정리 : CLIP의 자연어-이미지 가중치를 활용하여 decoder layer를 추가한 CLIPseg 모델을 제안하였습니다. prompt로 이미지 혹은 텍스트를 입력받아 3가지 segmantation task를 사전학습 없이 수행합니다. <br>
 [BLOG](https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-CLIPSeg-Image-Segmentation-Using-Text-and-Image-Prompts)
 
