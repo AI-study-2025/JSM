@@ -23,7 +23,14 @@
 간단 정리 : 2D 이미지 입력과 운전대의 각도 데이터만을 활용하여 CNN 아키텍처를 활용한 End-to-End 자율주행이 가능함을 입증하였습니다. <br>
 [BLOG](https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-End-to-End-Learning-for-Self-Driving-cars)
 
+<br>
+
+====================================================
 # Multi Modal Learning
+
+
+<br>
+
 
 ## Show and Tell: A Neural Image Caption Generator : [https://arxiv.org/abs/1411.4555](https://arxiv.org/abs/1411.4555) <br>
 간단 정리 : RNN과 CNN을 결합하여 Image caption task에서 SOTA 모달을 달성하며 서로 다른 모달리티 결합의 가능성을 보여주었습니다. <br>
@@ -48,7 +55,14 @@
 
 
 
+
+
+
+
+====================================================
 # Human Pose estimation
+
+<br>
 
 ## DeepPose: Human Pose Estimation via Deep Neural Networks
 [https://arxiv.org/abs/1312.4659](https://arxiv.org/abs/1312.4659) <br>
