@@ -66,6 +66,12 @@
 간단 정리 : Hourglass 형태의 다운-업 샘플링 과정을 통해서 여러 스케일의 이미지 특징을 한번에 처리하는 모듈을 제안하였고, 이러한 모듈을 여러개 쌓은 하나의 큰 모델을 제안하여 pose estimation에서 높은 성능을 달성하였습니다. <br>
 [BLOG](https://velog.io/@seungminchung/Stacked-Hourglass-Networks-for-Human-Pose-Estimation)
 
+
+### Deep High-Resolution Representation Learning for Human Pose Estimation
+[https://arxiv.org/abs/1902.09212](https://arxiv.org/abs/1902.09212) <br>
+간단 정리 : Pose Estimation 분야는 최근 다양한 스케일과 히트맵을 통한 예측이 높은 성능을 달성하고 있었다. 그래서 본 논문은 히트맵의 성능을 위해 고해상도 정보를 유지한체, 다양한 스케일의 이미지를 병렬적으로 처리할 수 있는 HRNet 모델을 제안하며 높은 성능을 달성하였습니다. <br>
+[BLOG](https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-HRNet-Deep-High-Resolution-Representation-Learning-for-Human-Pose-Estimation)
+
 <br><br><br>
 
 # Model Merging
