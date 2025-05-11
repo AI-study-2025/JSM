@@ -82,8 +82,7 @@
 ### Token-Pruned Pose Transformer for monocular and multi-view human pose estimation
 [https://arxiv.org/abs/2209.08194](https://arxiv.org/abs/2209.08194) <br>
 간단 정리 : 사람이 존재하는 픽셀을 추정하는 HTI을 사용하여 사람의 위치를 추정 후 각 관절과의 attention을 통해서 픽셀의 수를 줄여 메모리 효율을 증가시면서 더 나아가 다중뷰에도 활용하였다. <br>
-[BLOG]([https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-HRFormer-High-Resolution-Transformer-for-Dense-Prediction](https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-PPT-token-Pruned-Pose-Transformer-for-monocular-and-multi-view-human-pose-estimation))
-
+[BLOG]([https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-HRFormer-High-Resolution-Transformer-for-Dense-Prediction](https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-PPT-token-Pruned-Pose-Transformer-for-monocular-and-multi-view-human-pose-estimation)
 <br><br><br>
 
 # Model Merging
