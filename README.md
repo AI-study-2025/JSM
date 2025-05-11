@@ -72,6 +72,18 @@
 간단 정리 : Pose Estimation 분야는 최근 다양한 스케일과 히트맵을 통한 예측이 높은 성능을 달성하고 있었다. 그래서 본 논문은 히트맵의 성능을 위해 고해상도 정보를 유지한체, 다양한 스케일의 이미지를 병렬적으로 처리할 수 있는 HRNet 모델을 제안하며 높은 성능을 달성하였습니다. <br>
 [BLOG](https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-HRNet-Deep-High-Resolution-Representation-Learning-for-Human-Pose-Estimation)
 
+
+### HRFormer : High-Resolution-Transformer for Dense Prediction
+[https://arxiv.org/abs/2110.09408](https://arxiv.org/abs/2110.09408) <br>
+간단 정리 : HRNet의 아이디어를 그대로 사용하면서 초기에는 conv, 후반에는 ViT를 쓰를 사용하여 다양한 밴치마크에서 높은 성능을 달성하였습니다. 추가로 메모리 효율적인 ViT를 설계하기 위해서 겹치지 않는 window를 설정한 후 depth wise convolution을 사용하였습니다. <br>
+[BLOG](https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-HRFormer-High-Resolution-Transformer-for-Dense-Prediction)
+
+
+### HRFormer : Token-Pruned Pose Transformer for monocular and multi-view human pose estimation
+[https://arxiv.org/abs/2209.08194](https://arxiv.org/abs/2209.08194) <br>
+간단 정리 : 사람이 존재하는 픽셀을 추정하는 HTI을 사용하여 사람의 위치를 추정 후 각 관절과의 attention을 통해서 픽셀의 수를 줄여 메모리 효율을 증가시면서 더 나아가 다중뷰에도 활용하였다. <br>
+[BLOG](https://velog.io/@seungminchung/%EB%85%BC%EB%AC%B8-%EB%A6%AC%EB%B7%B0-HRFormer-High-Resolution-Transformer-for-Dense-Prediction)
+
 <br><br><br>
 
 # Model Merging
