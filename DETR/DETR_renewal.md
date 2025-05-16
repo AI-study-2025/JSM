@@ -20,56 +20,31 @@ DETR 논문에서는 기존의 NMS와 같은 인간의 사전 지식을 배제�
 
 이떄 헝가리안 매칭에 사용되는 SCORE는 매칭된 예측과 실제값에 대해서 (클래스, (박스 좌표, 박스 크기)) 에 대한 손실을 계산하게 됩니다. 그래서 이를 수식으로 표현하면 아래와 같이 나타낼 수 있습니다. 
 
-$$
-\hat{\sigma}
-= \arg\min_{\sigma \in S_N}
-\sum_{i=1}^{N}
-\mathcal{L}_{\mathrm{match}}\bigl(y_i, \hat{y}_{\sigma(i)}\bigr)
-$$
+<img width="293" alt="image" src="https://github.com/user-attachments/assets/fe95fba2-785b-4fe9-b78d-62c426b91509" />
+
 그래서 위의 수식에 따라서 헝가리안 알고리즘에서 기회비용표가 만들어지게 됩니다. 
 
 Label의 경우 $(c_{i},b_{i})$로 구성된다고 합니다. c의 경우 class에대한 라벨을 , 그리고 b는 $[0,1]^4$ 로 ( 중심x, 중심y, 상대적 높이, 상대적 넓이 )로 구성되어 있다고 합니다.
 
 그리고 $L_{match}$ 의 경우 아래와 같이 표현이 가능합니다.
-$$
-\mathcal{L}_{\mathrm{match}}(y_i,\hat y_{\sigma(i)})
-=
--\,\mathbf{1}\{c_i \neq \emptyset\}\,\hat p_{\sigma(i)}(c_i)
-\;+\;
-\mathbf{1}\{c_i \neq \emptyset\}\,\mathcal{L}_{\mathrm{box}}\bigl(b_i,\hat b_{\sigma(i)}\bigr)
-$$
+<img width="525" alt="image" src="https://github.com/user-attachments/assets/35466a1e-669c-4835-aba6-7fe7f596099c" />
+
 
 식에서 알수 있듯이 모두 실제값이 객체인 경우에 대해서만 손실을 계산해 주게 됩니다. 그리고 배경인 경우에는 모든 매칭 손실은 0 ( 상수 ) 취급하게 되어 객체를 매칭할때 아무런 영향을 주지 않습니다.
 
 위의 식을 통해서 1 대 1 매칭을 할수 있고, 최종적으로 모델이 최적화 해야하는 Loss는 "헝가리안 Loss" 라고 불립니다. 다음과 같이 모든 매칭에 대해서 class 손실을 구해주고, 실제 정답이 객체인 경우에 대해서만 박스 손실을 더해주게 됩니다. 
-$$
-\mathcal{L}_{\mathrm{Hungarian}}(y,\hat y)
-= \sum_{i=1}^{N}
-\Bigl[
--\,\log \hat p_{\hat\sigma(i)}(c_i)
-\;+\;
-\mathbf{1}\{c_i \neq \emptyset\}\,\mathcal{L}_{\mathrm{box}}\bigl(b_i,\hat b_{\hat\sigma(i)}\bigr)
-\Bigr]
-$$
+<img width="517" alt="image" src="https://github.com/user-attachments/assets/d9d2e50a-1a2a-4b75-9365-ca27bf939693" />
+
 그리고 배경 클래스에 대해서는 만일 ( 클래스 = 배경 )인 경우에는 전경보다 압도적으로 많기 떄문에 가중치를 1/10을 주어 모두 배경으로만 학습하는 것을 막아주는 효과를 강제하게 됩니다. 그리고 박스 손실의 경우 GIOU를 사용하게 됩니다.
 객체가 아닌 박스에 대해서는 박스손실을 계산하지 않게 됩니다. 
 
 #### 정리
 헝가리안을 사용하기 위해서 기회비용표를 만들어야하는데, 각 정답과 모델의 예측사이의 cost 함수는 아래와 같이 정의됩니다.
-$$\mathcal{L}_{\mathrm{match}}(y_i,\hat y_{\sigma(i)})
-=
--\,\mathbf{1}\{c_i \neq \emptyset\}\,\hat p_{\sigma(i)}(c_i)
-\;+\;
-\mathbf{1}\{c_i \neq \emptyset\}\,\mathcal{L}_{\mathrm{box}}\bigl(b_i,\hat b_{\sigma(i)}\bigr)$$
+<img width="534" alt="image" src="https://github.com/user-attachments/assets/5c981156-3d9e-4784-bfeb-374ef101c108" />
 
 그리고 위 식을 통해서 매칭이 끝난 후 최종적으로 모델의 손실은 "헝가리안 손실"로 불리고 아래와 같은 식을 통해서 정의됩니다.
-$$ \mathcal{L}_{\mathrm{Hungarian}}(y,\hat y)
-= \sum_{i=1}^{N}
-\Bigl[
--\,\log \hat p_{\hat\sigma(i)}(c_i)
-\;+\;
-\mathbf{1}\{c_i \neq \emptyset\}\,\mathcal{L}_{\mathrm{box}}\bigl(b_i,\hat b_{\hat\sigma(i)}\bigr)
-\Bigr] $$
+<img width="512" alt="image" src="https://github.com/user-attachments/assets/4c12c997-a9c3-46a6-993f-8f690d30dce1" />
+
 
 
 
@@ -79,8 +54,8 @@ DETR에서 박스에 대해 손실을 구하는 경우 박스의 좌표와 크�
 이를 해결하기 위해서 해당 논문에서는 GIOU와 $l_{1}$ loss를 선형결합한 손실 함수를 사용한다고 합니다. GIOU의 경우 generaized IOU로 이미지의 크기 까지 고려한 평가 방법입니다. 
 
 그래서 최종적으로 Box에 대한 손실은 아래와 같이 정의됩니다.
-$$ {L}_{\mathrm{box}}\bigl(b_i,\hat b_{\hat\sigma(i)}\bigr) = \lambda_{\mathrm{IoU}}\;L_{\mathrm{IoU}}(b_i,\hat b_{\sigma(i)}) \;+\; \lambda_{L1}\,\|b_i - \hat b_{\sigma(i)}\|_1
- $$
+<img width="436" alt="image" src="https://github.com/user-attachments/assets/e0325fe8-8998-49f0-938d-b1abd1f99fb6" />
+
 
 위의 $L_{{IOU}}$의 경우 박스가 최대한 겹치도록 유도하고, $L_{1}$의 경우 박스가 각 축 방향으로 얼마나 이동해야하는지를 의미합니다.
 
@@ -102,7 +77,8 @@ CNN 모델의 경우 주로 3채널 이미지를 받고, 해상도를 32배로 �
 #### Transformer encoder
 Transformer encoder의 입력으로 넣기 전에 CNN Backbone에서 나온 Feature map에 (1 X 1 ) convolution을 곱해서 차원을 C -> d 로 더 작은 차원으로 낮추준다고 합니다. 그리고 Transformer의 경우 입력에 대한 순서를 무시하고 모든 변수들과의 attention을 하기에 어느 패치에서 왔는지에 대한 정보를 넣어주기 위해서 positional encoding을 더해주게 됩니다.
 그런 다음 Trnasformer의 입력으로 넣기 위해서 feature map을 flatten 하여 d * HW 크기의 입력을 만든다고 합니다. 
-![[Pasted image 20250516090959.png]]
+<img width="539" alt="image" src="https://github.com/user-attachments/assets/9bfb361d-a6ec-4eae-b6aa-598444f205fd" />
+
 
 #### Transformer Decoder
 deocder의 입력의 경우 N개의 "학습 가능한 positional embedding" 입니다.  그래서 각각이 다른 값을 가지고 있어 서로 다른 출력을 갖게 됩니다.
@@ -119,4 +95,5 @@ Proejction의 경우 nn.Linear(d,d)가 총 3번 반복되고, Box Head의 경우
 추가적으로 보조 손실을 사용하면 보다더 유용하다고합니다. 
 기본적인 방법은 유지하되, 각 디코더의 레이어별로  매칭 후 FFN와 각 HEAD를 통과해서 결과를 도출해서 손실을 구한다고 합니다. 
 예를들어서 K개의 레이어로 구성된 decoder의 경우 원래는 최종 K 번째에 대해서만 Loss를 구했다면, 보조 손실은 K 전의 ( K - 1 ) 개에 대해서 헝가리안 손실을 구하고 최종 손실에 이 보조 헝가리안 손실을 더해주어 각 레이어 과정에서도 손실이 흐르도록 해준다고 합니다.
-$$ L_{total}​=∑^L_{l=1}L_{Hungarian}​^{(l)}​ $$
+<img width="244" alt="image" src="https://github.com/user-attachments/assets/dca54c1e-db4b-4627-81bf-6a385a9ea685" />
+
